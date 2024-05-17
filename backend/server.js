@@ -5,10 +5,6 @@ import cors from "cors";
 const app = express();
 const porta = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World')
-})
-
 app.use(
   cors({
     origin: "*",
