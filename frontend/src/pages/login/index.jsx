@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./styles.scss";
+import styles from "./styles.module.scss";
 import { api } from "../../shared/api";
 
 export const LoginPage = () => {
@@ -15,7 +15,7 @@ export const LoginPage = () => {
   };
 
   return (
-    <div className="background">
+    <div className={styles.background}>
       <form onSubmit={login}>
         <h1>Login</h1>
         <label>Email</label>

@@ -2,6 +2,8 @@ import { Navigate, createBrowserRouter } from "react-router-dom";
 import { HomePage } from "./pages/home";
 import { LoginPage } from "./pages/login";
 import { HomeAdminPage } from "./pages/home-admin";
+import { Header } from "./components/header";
+import { ContatoPage } from "./pages/contato";
 
 export const routes = createBrowserRouter([
   {
@@ -10,7 +12,12 @@ export const routes = createBrowserRouter([
   },
   {
     path: "/",
-    element: <HomePage />,
+    element: (
+      <>
+        <Header />
+        <HomePage />
+      </>
+    ),
   },
   {
     path: "/login",
@@ -19,5 +26,14 @@ export const routes = createBrowserRouter([
   {
     path: "/home",
     element: <HomeAdminPage />,
+  },
+  {
+    path: "/contato",
+    element: (
+      <>
+        <Header />
+        <ContatoPage />
+      </>
+    ),
   },
 ]);
