@@ -7,12 +7,12 @@ import { ContatoPage } from "./pages/contato";
 
 export const routes = createBrowserRouter(
   [
+    // {
+    //   path: "*",
+    //   element: <Navigate to="/fatec-pi-2-semestre" replace={true} />,
+    // },
     {
-      path: "*",
-      element: <Navigate to="/fatec-pi-2-semestre" replace={true} />,
-    },
-    {
-      path: "/fatec-pi-2-semestre",
+      path: "/",
       element: (
         <>
           <Header />
@@ -21,15 +21,15 @@ export const routes = createBrowserRouter(
       ),
     },
     {
-      path: "/fatec-pi-2-semestre/login",
+      path: "/login",
       element: <LoginPage />,
     },
     {
-      path: "/fatec-pi-2-semestre/home",
+      path: "/home",
       element: <HomeAdminPage />,
     },
     {
-      path: "/fatec-pi-2-semestrefatec-pi-2-semestre/contato",
+      path: "/contato",
       element: (
         <>
           <Header />
