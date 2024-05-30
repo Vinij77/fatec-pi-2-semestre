@@ -1,9 +1,9 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
-import { HomePage } from "./pages/home";
-import { LoginPage } from "./pages/login";
-import { HomeAdminPage } from "./pages/home-admin";
-import { Header } from "./components/header";
-import { ContatoPage } from "./pages/contato";
+import { HomePage } from "./pages/home.jsx";
+import { LoginPage } from "./pages/login.jsx";
+import { HomeAdminPage } from "./pages/home-admin.jsx";
+import { HeaderComponent } from "./components/header.jsx";
+import { ContatoPage } from "./pages/contato.jsx";
 
 export const routes = createBrowserRouter(
   [
@@ -15,7 +15,7 @@ export const routes = createBrowserRouter(
       path: "/",
       element: (
         <>
-          <Header />
+          <HeaderComponent />
           <HomePage />
         </>
       ),
@@ -32,7 +32,7 @@ export const routes = createBrowserRouter(
       path: "/contato",
       element: (
         <>
-          <Header />
+          <HeaderComponent />
           <ContatoPage />
         </>
       ),

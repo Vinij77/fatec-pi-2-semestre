@@ -1,6 +1,6 @@
 import { useState } from "react";
-import styles from "./styles.module.scss";
-import { api } from "../../shared/api";
+import { api } from "../shared/api";
+import { Input } from "../components/input.jsx";
 
 export const LoginPage = () => {
   const [Email, setEmail] = useState("");
@@ -15,16 +15,19 @@ export const LoginPage = () => {
   };
 
   return (
-    <div className={styles.background}>
-      <form onSubmit={login}>
+    <div className="items-center flex flex-col h-full justify-center min-h-screen min-w-full w-full">
+      <form
+        onSubmit={login}
+        className="items-center bg-[#3c6fdd] rounded-[5px] flex flex-col gap-4 py-4 px-8"
+      >
         <h1>Login</h1>
-        <label>Email</label>
-        <input
+        <Input
+          Label={"Email"}
           value={Email}
           onChange={(event) => setEmail(event.target.value)}
         />
-        <label>Senha</label>
-        <input
+        <Input
+          Label={"Senha"}
           value={Senha}
           onChange={(event) => setSenha(event.target.value)}
         />
