@@ -7,10 +7,10 @@ import { ContatoPage } from "./pages/contato";
 
 export const routes = createBrowserRouter(
   [
-    // {
-    //   path: "*",
-    //   element: <Navigate to="/fatec-pi-2-semestre" replace={true} />,
-    // },
+    {
+      path: "*",
+      element: <Navigate to="/" replace={true} />,
+    },
     {
       path: "/",
       element: (

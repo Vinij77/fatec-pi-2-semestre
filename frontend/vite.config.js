@@ -4,5 +4,5 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/fatec-pi-2-semestre/",
+  base: "/fatec-pi-2-semestre",
 });
