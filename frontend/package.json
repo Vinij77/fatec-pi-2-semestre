@@ -2,6 +2,7 @@
   "name": "fatec-pi-2-semestre-frontend",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://Otavio14.github.io/fatec-pi-2-semestre",
   "type": "module",
   "scripts": {
     "dev": "vite",
