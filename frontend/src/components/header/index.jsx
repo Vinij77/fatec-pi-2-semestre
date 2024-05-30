@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 export const Header = () => {
   return (
     <div className={styles.container}>
-      <NavLink to="/" className={styles.logo}>
+      <NavLink to="/fatec-pi-2-semestre/" className={styles.logo}>
         <img
           alt="Logo da empresa"
           src="https://cdn-icons-png.flaticon.com/512/2964/2964514.png"
@@ -12,10 +12,10 @@ export const Header = () => {
         <p>Suplementos</p>
       </NavLink>
       <div className={styles.centerLinks}>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/contato">Contato</NavLink>
+        <NavLink to="/fatec-pi-2-semestre">Home</NavLink>
+        <NavLink to="/fatec-pi-2-semestre/contato">Contato</NavLink>
       </div>
-      <NavLink to="/login" className={styles.login}>
+      <NavLink to="/fatec-pi-2-semestre/login" className={styles.login}>
         Login
       </NavLink>
     </div>

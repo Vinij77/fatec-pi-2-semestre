@@ -9,10 +9,10 @@ export const routes = createBrowserRouter(
   [
     {
       path: "*",
-      element: <Navigate to="/" replace={true} />,
+      element: <Navigate to="/fatec-pi-2-semestre" replace={true} />,
     },
     {
-      path: "/",
+      path: "/fatec-pi-2-semestre",
       element: (
         <>
           <Header />
@@ -21,15 +21,15 @@ export const routes = createBrowserRouter(
       ),
     },
     {
-      path: "/login",
+      path: "/fatec-pi-2-semestre/login",
       element: <LoginPage />,
     },
     {
-      path: "/home",
+      path: "/fatec-pi-2-semestre/home",
       element: <HomeAdminPage />,
     },
     {
-      path: "/contato",
+      path: "/fatec-pi-2-semestrefatec-pi-2-semestre/contato",
       element: (
         <>
           <Header />
