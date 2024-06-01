@@ -1,0 +1,5 @@
+CREATE TABLE estados (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    sigla TEXT NOT NULL
+);

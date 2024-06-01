@@ -1,0 +1,5 @@
+CREATE TABLE cupons (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    porcentagem REAL NOT NULL
+);

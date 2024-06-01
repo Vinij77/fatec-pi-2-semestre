@@ -14,16 +14,141 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  email String @unique
-  name String?
-  age Int?
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+  age   Int?
   tasks Task[]
 }
 
 model Task {
-  id     Int     @id @default(autoincrement())
+  id     Int    @id @default(autoincrement())
   title  String
   userId Int
-  user User @relation(fields: [userId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
+}
+
+model Avaliacao {
+  id           Int     @id @default(autoincrement())
+  id_produtos  Int
+  id_clientes  Int
+  nota         Int
+  comentario   String
+  dt_avaliacao String
+  produto      Produto @relation(fields: [id_produtos], references: [id])
+  cliente      Cliente @relation(fields: [id_clientes], references: [id])
+}
+
+model Categoria {
+  id               Int                @id @default(autoincrement())
+  nome             String
+  ProdutoCategoria ProdutoCategoria[]
+}
+
+model Cidade {
+  id         Int          @id @default(autoincrement())
+  nome       String
+  id_estados Int
+  estado     Estado       @relation(fields: [id_estados], references: [id])
+  Cliente    Cliente[]
+  Fornecedor Fornecedor[]
+}
+
+model Cliente {
+  id         Int         @id @default(autoincrement())
+  id_cidades Int
+  cep        String
+  email      String
+  telefone   String
+  bairro     String
+  numero     Int
+  endereco   String
+  cidade     Cidade      @relation(fields: [id_cidades], references: [id])
+  Avaliacao  Avaliacao[]
+  Pedido     Pedido[]
+}
+
+model Cupom {
+  id          Int    @id @default(autoincrement())
+  nome        String
+  porcentagem Float
+}
+
+model Estado {
+  id     Int      @id @default(autoincrement())
+  nome   String
+  sigla  String
+  Cidade Cidade[]
+}
+
+model FornecedoresProduto {
+  id              Int        @id @default(autoincrement())
+  id_fornecedores Int
+  id_produtos     Int
+  preco           Float
+  quantidade      Int
+  fornecedor      Fornecedor @relation(fields: [id_fornecedores], references: [id])
+  produto         Produto    @relation(fields: [id_produtos], references: [id])
+}
+
+model Fornecedor {
+  id                  Int                   @id @default(autoincrement())
+  nome                String
+  endereco            String
+  cep                 String
+  complemento         String?
+  telefone            String
+  status              String
+  id_cidades          Int
+  cidade              Cidade                @relation(fields: [id_cidades], references: [id])
+  FornecedoresProduto FornecedoresProduto[]
+}
+
+model Pedido {
+  id            Int             @id @default(autoincrement())
+  id_clientes   Int
+  status        String
+  endereco      String
+  dt_pedido     String
+  total         Float
+  cliente       Cliente         @relation(fields: [id_clientes], references: [id])
+  ProdutoPedido ProdutoPedido[]
+}
+
+model ProdutoCategoria {
+  id            Int       @id @default(autoincrement())
+  id_produtos   Int
+  id_categorias Int
+  produto       Produto   @relation(fields: [id_produtos], references: [id])
+  categoria     Categoria @relation(fields: [id_categorias], references: [id])
+}
+
+model ProdutoPedido {
+  id          Int     @id @default(autoincrement())
+  id_pedidos  Int
+  id_produtos Int
+  quantidade  Int
+  preco       Float
+  pedido      Pedido  @relation(fields: [id_pedidos], references: [id])
+  produto     Produto @relation(fields: [id_produtos], references: [id])
+}
+
+model Produto {
+  id                  Int                   @id @default(autoincrement())
+  nome                String
+  preco               Float
+  estoque             Int
+  descricao           String
+  dt_validade         String
+  Avaliacao           Avaliacao[]
+  FornecedoresProduto FornecedoresProduto[]
+  ProdutoCategoria    ProdutoCategoria[]
+  ProdutoPedido       ProdutoPedido[]
+}
+
+model Usuario {
+  id    Int    @id @default(autoincrement())
+  nome  String
+  email String
+  senha String
 }

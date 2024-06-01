@@ -1,5 +1,5 @@
 import { Router } from "express";
-import UserController from "../controllers/usuario.controller.js";
+import UserController from "../controllers/usuarios.controller.js";
 import {
   createUserValidator,
   updateUserValidator,
