@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { api } from "../shared/api";
 import { Input } from "../components/input.jsx";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
   const [Email, setEmail] = useState("");
   const [Senha, setSenha] = useState("");
+  const navigate = useNavigate();
 
   const login = (event) => {
     event.preventDefault();
+    navigate("/admin");
 
     api.post("login", { email: Email, senha: Senha }).then((response) => {
       console.log(response);

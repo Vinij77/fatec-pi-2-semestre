@@ -83,7 +83,7 @@ export const HomePage = () => {
       <div className="mb-[33px] w-full border-b border-[#d9d9d9] pb-[12px] text-[38px] font-semibold leading-[140%]">
         Produtos
       </div>
-      <div className="grid grid-cols-3 gap-[20px]">
+      <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 xl:grid-cols-3">
         {Produtos.map((produto, i) => (
           <NavLink key={i} to={`/produto/${produto?.id}`}>
             <Card

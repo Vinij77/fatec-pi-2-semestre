@@ -6,6 +6,7 @@ import { ContatoPage } from "./pages/contato.jsx";
 import { ProdutoPage } from "./pages/produto.jsx";
 import { AdminHomePage } from "./pages/admin-home.jsx";
 import { AdminHeader } from "./components/admin-header.jsx";
+import { UsuarioPage } from "./pages/usuario.jsx";
 
 export const routes = createBrowserRouter(
   [
@@ -46,11 +47,14 @@ export const routes = createBrowserRouter(
     },
     {
       path: "/admin",
-      element: (
-        <AdminHeader>
-          <AdminHomePage />
-        </AdminHeader>
-      ),
+      element: <AdminHeader />,
+      children: [
+        { path: "", element: <AdminHomePage /> },
+        {
+          path: "usuarios",
+          element: <UsuarioPage />,
+        },
+      ],
     },
   ],
   { basename: "/fatec-pi-2-semestre" }

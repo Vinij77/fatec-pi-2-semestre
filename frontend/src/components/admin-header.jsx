@@ -1,10 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, Outlet } from "react-router-dom";
 
-export const AdminHeader = ({ children }) => {
+export const AdminHeader = () => {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    navigate("/login");
+  };
+
   return (
-    <div className="flex">
+    <div className="grid grid-cols-[200px,1fr]">
       <div className="w-[200px] h-screen bg-[#2b38d1] px-4 py-8 text-white flex flex-col gap-8">
-        <NavLink to="/" className="flex items-center flex-col">
+        <NavLink to="/admin" className="flex items-center flex-col">
           <img
             alt="Logo da empresa"
             src="https://cdn-icons-png.flaticon.com/512/2964/2964514.png"
@@ -21,12 +27,16 @@ export const AdminHeader = ({ children }) => {
           <NavLink to="/admin/pedidos">Pedidos</NavLink>
           <NavLink to="/admin/fornecedores">Fornecedores</NavLink>
           <NavLink to="/admin/produtos">Produtos</NavLink>
+          <NavLink to="/admin/usuarios">Usuários</NavLink>
         </div>
-        <button className="rounded bg-[#dd3842] py-[15px] px-[34px] font-semibold leading-[20px] text-white w-fit mx-auto mt-auto">
+        <button
+          onClick={logout}
+          className="rounded bg-[#dd3842] py-[15px] px-[34px] font-semibold leading-[20px] text-white w-fit mx-auto mt-auto"
+        >
           Sair
         </button>
       </div>
-      {children}
+      <Outlet />
     </div>
   );
 };
